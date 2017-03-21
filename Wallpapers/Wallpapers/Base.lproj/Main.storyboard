@@ -53,8 +53,8 @@
         <!--Popular-->
         <scene sceneID="WdA-uP-w1u">
             <objects>
-                <collectionViewController id="pE8-vj-RLf" customClass="CollectionViewController" customModule="Wallpapers" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="L71-Gk-dIf">
+                <collectionViewController id="pE8-vj-RLf" customClass="PopularCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="L71-Gk-dIf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,17 +99,17 @@
         <!--Category-->
         <scene sceneID="thp-CY-Ah6">
             <objects>
-                <tableViewController id="6FO-6K-3U9" userLabel="Category" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e05-vz-OFd">
+                <tableViewController id="6FO-6K-3U9" userLabel="Category" customClass="CategoriesTableViewController" customModule="Wallpapers" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" id="e05-vz-OFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8sM-Sy-b1R">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="8sM-Sy-b1R">
+                                <rect key="frame" x="0.0" y="28" width="375" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8sM-Sy-b1R" id="446-1B-5HP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -134,7 +134,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXr-4Q-leP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="utH-df-3mM" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
-            <point key="canvasLocation" x="154" y="796"/>
+            <point key="canvasLocation" x="152.80000000000001" y="795.6521739130435"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="EDg-By-ksP">
