@@ -23,9 +23,10 @@ class HttpRequester {
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler:
             {bodyData, response,error in
                 do{
-                let body = try JSONSerialization.jsonObject(with: bodyData!, options: .allowFragments)
-                    print(body)
-                    weakSelf?.delegate?.didReceiveData(data : body)
+                    let body = try JSONSerialization.jsonObject(with: bodyData!, options: []) as! [String:Any]
+                    
+                    
+                    weakSelf?.delegate?.didReceiveData(data : body["hits"]!)
                 }
                 catch{
                     weakSelf?.delegate?.didReceiveError(error : error)
