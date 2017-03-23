@@ -8,10 +8,30 @@
 
 import UIKit
 
-class CategoriesTableViewController: UITableViewController {
-
+class CategoriesTableViewController: UITableViewController , HttpRequesterDelegate{
+    var images: [Image] = []
+    
+    var url: String {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return "\(appDelegate.baseUrl)&pretty=true&per_page=5&category=science"
+        }
+    }
+    
+    var http: HttpRequester? {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.http
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.http?.delegate = self
+        self.http?.get(fromUrl: self.url)
+
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "url-cell")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -19,7 +39,15 @@ class CategoriesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    func didReceiveData(data: Any) {
+        
+        let dataArray = data as! [Dictionary<String, Any>]
+        
+        self.images = dataArray.map(){Image(withPreviewUrl: $0)}
+        
+        self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,25 +55,23 @@ class CategoriesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func numberOfSections(in tableView: UITableView) -> Int {        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.images.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "url-cell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = self.images[indexPath.row].previewUrl
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
