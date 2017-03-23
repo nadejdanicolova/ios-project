@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		95150C751E84097100458339 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95150C741E84097100458339 /* Image.swift */; };
 		95150C781E840BD900458339 /* ImageDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95150C771E840BD900458339 /* ImageDictionary.swift */; };
+		95150C7B1E843F4400458339 /* LoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95150C7A1E843F4400458339 /* LoadingExtension.swift */; };
 		951697E71E83E6210061550C /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951697E61E83E6210061550C /* HttpRequester.swift */; };
 		951697E91E83F0990061550C /* HttpRequesterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951697E81E83F0990061550C /* HttpRequesterDelegate.swift */; };
 		95673AA51E8132C400D53205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95673AA41E8132C400D53205 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 		30911C8CF96119E52A9C5F86 /* Pods-Wallpapers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallpapers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wallpapers/Pods-Wallpapers.release.xcconfig"; sourceTree = "<group>"; };
 		95150C741E84097100458339 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Models/Image.swift; sourceTree = "<group>"; };
 		95150C771E840BD900458339 /* ImageDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDictionary.swift; path = Models/DictExtensions/ImageDictionary.swift; sourceTree = "<group>"; };
+		95150C7A1E843F4400458339 /* LoadingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingExtension.swift; path = ViewControllers/Extensions/LoadingExtension.swift; sourceTree = "<group>"; };
 		951697E61E83E6210061550C /* HttpRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequester.swift; path = Http/HttpRequester.swift; sourceTree = "<group>"; };
 		951697E81E83F0990061550C /* HttpRequesterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequesterDelegate.swift; path = Http/HttpRequesterDelegate.swift; sourceTree = "<group>"; };
 		95673AA11E8132C400D53205 /* Wallpapers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallpapers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,14 @@
 			name = DictExtensions;
 			sourceTree = "<group>";
 		};
+		95150C791E843F0000458339 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95150C7A1E843F4400458339 /* LoadingExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		951697E51E83E5CB0061550C /* Http */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		951697EA1E83F7E70061550C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				95150C791E843F0000458339 /* Extensions */,
 				959F6DA01E81BE270066C20E /* CategoriesTableViewController.swift */,
 			);
 			name = ViewControllers;
@@ -257,6 +268,7 @@
 			files = (
 				959F6DA11E81BE270066C20E /* CategoriesTableViewController.swift in Sources */,
 				95150C751E84097100458339 /* Image.swift in Sources */,
+				95150C7B1E843F4400458339 /* LoadingExtension.swift in Sources */,
 				951697E91E83F0990061550C /* HttpRequesterDelegate.swift in Sources */,
 				95150C781E840BD900458339 /* ImageDictionary.swift in Sources */,
 				951697E71E83E6210061550C /* HttpRequester.swift in Sources */,
