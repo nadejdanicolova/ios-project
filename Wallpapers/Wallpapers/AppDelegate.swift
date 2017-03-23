@@ -13,9 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var baseUrl: String = "https://pixabay.com/api/?key=4774269-a8f14f448704b7e8538888d7c&image_type=photo"
+    
+    var http: HttpRequester?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.http = HttpRequester()
         return true
     }
 
