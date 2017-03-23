@@ -10,8 +10,8 @@ import Foundation
 
 extension Image {
     convenience init(withDict dict: Dictionary<String , Any>){
-        let id = dict["id"] as! String
-        let previewUrl = dict["previewUrl"] as! String
+        let id = dict["id"] as! Int
+        let previewUrl = dict["previewURL"] as! String
         let tags = dict["tags"] as! String
         let likes = dict["likes"] as! Int
         

@@ -10,16 +10,16 @@ import UIKit
 
 class Image{
 
-    var id:String?
+    var id:Int?
     var tags: String?
     var previewUrl: String?
     var likes : Int?
     
     convenience init(withPreviewUrl previewUrl: String){
-        self.init(withId: "", previewUrl: previewUrl, tags: "", andLikes: 0)
+        self.init(withId: 0, previewUrl: previewUrl, tags: "", andLikes: 0)
     }
     
-    init(withId id:String, previewUrl: String,tags: String, andLikes likes: Int){
+    init(withId id:Int, previewUrl: String,tags: String, andLikes likes: Int){
         self.id = id
         self.previewUrl = previewUrl
         self.likes = likes
