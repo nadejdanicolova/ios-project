@@ -29,6 +29,9 @@ class CategoriesTableViewController: UITableViewController , HttpRequesterDelega
         super.viewDidLoad()
         
         self.http?.delegate = self
+        
+        self.showLoadingScreen()
+        
         self.http?.get(fromUrl: self.url)
 
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "url-cell")
@@ -40,12 +43,15 @@ class CategoriesTableViewController: UITableViewController , HttpRequesterDelega
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     func didReceiveData(data: Any) {
-        
+    
         let dataArray = data as! [Dictionary<String, Any>]
         
-        self.images = dataArray.map(){Image(withPreviewUrl: $0)}
+        self.images = dataArray.map(){Image(withDict: $0)}
         
-        self.tableView.reloadData()
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+            self.hideLoadingScreen()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,11 +61,11 @@ class CategoriesTableViewController: UITableViewController , HttpRequesterDelega
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {        return 1
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1  
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.images.count
     }
 
