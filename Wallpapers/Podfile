@@ -9,12 +9,12 @@ target 'Wallpapers' do
 
 	pod 'RAMAnimatedTabBarController', "~> 2.0.13" 
 
-pod 'SwiftyJSON'
-pod 'Alamofire', '~> 4.4'
-pod 'lottie-ios'
+pod ‘Kingfisher’, ‘~> 3.0’
+pod ‘lottie-ios’
 pod "SAParallaxViewControllerSwift"
 pod "SwiftSpinner"
 pod "LIHAlert"
+pod 'FaveButton', '~> 2.0.3'
 
 
 end

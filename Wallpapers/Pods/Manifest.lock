@@ -1,5 +1,6 @@
 PODS:
-  - Alamofire (4.4.0)
+  - FaveButton (2.0.3)
+  - Kingfisher (3.5.2)
   - LIHAlert (2.0.4)
   - lottie-ios (1.5.1)
   - MisterFusion (2.1.0)
@@ -9,19 +10,19 @@ PODS:
     - MisterFusion
     - SABlurImageView
   - SwiftSpinner (1.1.0)
-  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.4)
+  - FaveButton (~> 2.0.3)
+  - Kingfisher (~> 3.0)
   - LIHAlert
   - lottie-ios
   - RAMAnimatedTabBarController (~> 2.0.13)
   - SAParallaxViewControllerSwift
   - SwiftSpinner
-  - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
+  Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   LIHAlert: 42ed880302f9632917ca8e787e42b8653296166a
   lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
   MisterFusion: 9f6df9ac06559d21e710510a737f877abec92486
@@ -29,8 +30,7 @@ SPEC CHECKSUMS:
   SABlurImageView: bd0940330d0e8571379a495623e57c436659a202
   SAParallaxViewControllerSwift: 04939b077ef0a563be74fed16cfc0688900a3c09
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 9f70be07301a3101921df731a4908c658b317052
+PODFILE CHECKSUM: b7b3f8e591268d462d013d04ae2f35304864f1f0
 
 COCOAPODS: 1.2.0
