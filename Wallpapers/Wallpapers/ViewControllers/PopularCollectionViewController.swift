@@ -9,7 +9,7 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
     var url: String {
         get{
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return "\(appDelegate.baseUrl)&per_page=35&order=popular"
+            return "\(appDelegate.baseUrl)&per_page=5&order=popular"
         }
     }
     
@@ -22,14 +22,14 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         let cellNib = UINib(nibName: "ImageCollectionCell", bundle: nil)
         
         self.http?.delegate = self
         self.http?.get(fromUrl: self.url)
         self.collectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
         
-      
+        
         
     }
     
@@ -43,7 +43,7 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
     }
     
     override func viewWillAppear(_ animated: Bool) {
-    
+        
     }
     
     func didReceiveData(data: Any) {
@@ -79,7 +79,7 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as!
         ImageCollectionCell
         
-       // cell.image.sizeThatFits(CGSize(width: width, height: width))
+        // cell.image.sizeThatFits(CGSize(width: width, height: width))
         
         let imageUrl = self.images[indexPath.row].previewUrl
         
