@@ -27,5 +27,6 @@ class Image{
         self.id = id
         self.previewUrl = previewUrl
         self.likes = likes
+        self.tags = tags
     }
 }

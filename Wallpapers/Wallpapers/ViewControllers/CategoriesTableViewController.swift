@@ -13,8 +13,10 @@ class CategoriesTableViewController: UITableViewController{
         let cellNib = UINib(nibName: "CategoriesTableViewCell", bundle: nil)
         
         self.tableView.register(cellNib, forCellReuseIdentifier: reuseIdentifier)
-        
-        self.showLoadingScreen()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         self.showLoadingScreen()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,10 +45,34 @@ class CategoriesTableViewController: UITableViewController{
         cell.collectionImage.image = self.categoriesImages[indexPath.row]
         cell.collectionName.text = self.categoriesNames[indexPath.row]
         
+//        let imgTableView = ImageTableViewController()
+//        imgTableView.selectedCategory = self.categoriesNames[indexPath.row]
+//
+//        navigationController?.pushViewController(imgTableView, animated: true)
+        
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "galleryCollectionViewController" )
+        UIApplication.shared.keyWindow?.rootViewController = initialViewController
+        
+      
+    }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "imageTableViewController" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                let controller = segue.destination as! ImageTableViewController
+//                controller.selectedCategory = self.categoriesNames[indexPath.row]
+//            }
+//        }
+//    }
+//    
+//    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

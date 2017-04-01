@@ -15,13 +15,13 @@
 		9552BF681E8D2F3400DCC0E1 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552BF661E8D2F3400DCC0E1 /* CategoriesTableViewCell.swift */; };
 		9552BF691E8D2F3400DCC0E1 /* CategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9552BF671E8D2F3400DCC0E1 /* CategoriesTableViewCell.xib */; };
 		9552BF6B1E8D6D7800DCC0E1 /* LikesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552BF6A1E8D6D7800DCC0E1 /* LikesCollectionViewController.swift */; };
-		9552BF6D1E8D6EBC00DCC0E1 /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552BF6C1E8D6EBC00DCC0E1 /* ImageTableViewController.swift */; };
 		9552BF6F1E8D71EA00DCC0E1 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552BF6E1E8D71EA00DCC0E1 /* ImagePreviewViewController.swift */; };
 		95673AA51E8132C400D53205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95673AA41E8132C400D53205 /* AppDelegate.swift */; };
 		95673AAA1E8132C400D53205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95673AA81E8132C400D53205 /* Main.storyboard */; };
 		95673AAC1E8132C400D53205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95673AAB1E8132C400D53205 /* Assets.xcassets */; };
 		95673AAF1E8132C400D53205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95673AAD1E8132C400D53205 /* LaunchScreen.storyboard */; };
-		959F6DA11E81BE270066C20E /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F6DA01E81BE270066C20E /* CategoriesTableViewController.swift */; };
+		95B22A3F1E8E4B18006E795C /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B22A3E1E8E4B18006E795C /* CategoriesTableViewController.swift */; };
+		95B22A451E8FC6B5006E795C /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B22A441E8FC6B5006E795C /* GalleryCollectionViewController.swift */; };
 		95E5AFEA1E8693D500AD3FDB /* PopularCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5AFE91E8693D500AD3FDB /* PopularCollectionViewController.swift */; };
 		95F49A021E87EC950035C233 /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F49A001E87EC950035C233 /* ImageCollectionCell.swift */; };
 		95F49A031E87EC950035C233 /* ImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F49A011E87EC950035C233 /* ImageCollectionCell.xib */; };
@@ -38,7 +38,6 @@
 		9552BF661E8D2F3400DCC0E1 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesTableViewCell.swift; path = Views/CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		9552BF671E8D2F3400DCC0E1 /* CategoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesTableViewCell.xib; path = Views/CategoriesTableViewCell.xib; sourceTree = "<group>"; };
 		9552BF6A1E8D6D7800DCC0E1 /* LikesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikesCollectionViewController.swift; path = ViewControllers/LikesCollectionViewController.swift; sourceTree = "<group>"; };
-		9552BF6C1E8D6EBC00DCC0E1 /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTableViewController.swift; path = ViewControllers/ImageTableViewController.swift; sourceTree = "<group>"; };
 		9552BF6E1E8D71EA00DCC0E1 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePreviewViewController.swift; path = ViewControllers/ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		95673AA11E8132C400D53205 /* Wallpapers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallpapers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95673AA41E8132C400D53205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +45,8 @@
 		95673AAB1E8132C400D53205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95673AAE1E8132C400D53205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95673AB01E8132C400D53205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		959F6DA01E81BE270066C20E /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		95B22A3E1E8E4B18006E795C /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesTableViewController.swift; path = ViewControllers/CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		95B22A441E8FC6B5006E795C /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryCollectionViewController.swift; path = ViewControllers/GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		95E5AFE91E8693D500AD3FDB /* PopularCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopularCollectionViewController.swift; path = ViewControllers/PopularCollectionViewController.swift; sourceTree = "<group>"; };
 		95F49A001E87EC950035C233 /* ImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionCell.swift; path = Views/ImageCollectionCell.swift; sourceTree = "<group>"; };
 		95F49A011E87EC950035C233 /* ImageCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCollectionCell.xib; path = Views/ImageCollectionCell.xib; sourceTree = "<group>"; };
@@ -113,11 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				95150C791E843F0000458339 /* Extensions */,
-				959F6DA01E81BE270066C20E /* CategoriesTableViewController.swift */,
 				95E5AFE91E8693D500AD3FDB /* PopularCollectionViewController.swift */,
 				9552BF6A1E8D6D7800DCC0E1 /* LikesCollectionViewController.swift */,
-				9552BF6C1E8D6EBC00DCC0E1 /* ImageTableViewController.swift */,
 				9552BF6E1E8D71EA00DCC0E1 /* ImagePreviewViewController.swift */,
+				95B22A3E1E8E4B18006E795C /* CategoriesTableViewController.swift */,
+				95B22A441E8FC6B5006E795C /* GalleryCollectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,14 +301,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552BF6B1E8D6D7800DCC0E1 /* LikesCollectionViewController.swift in Sources */,
-				959F6DA11E81BE270066C20E /* CategoriesTableViewController.swift in Sources */,
+				95B22A3F1E8E4B18006E795C /* CategoriesTableViewController.swift in Sources */,
 				95150C751E84097100458339 /* Image.swift in Sources */,
 				95150C7B1E843F4400458339 /* LoadingExtension.swift in Sources */,
 				951697E91E83F0990061550C /* HttpRequesterDelegate.swift in Sources */,
 				95150C781E840BD900458339 /* ImageDictionary.swift in Sources */,
 				951697E71E83E6210061550C /* HttpRequester.swift in Sources */,
-				9552BF6D1E8D6EBC00DCC0E1 /* ImageTableViewController.swift in Sources */,
 				95F49A021E87EC950035C233 /* ImageCollectionCell.swift in Sources */,
+				95B22A451E8FC6B5006E795C /* GalleryCollectionViewController.swift in Sources */,
 				95E5AFEA1E8693D500AD3FDB /* PopularCollectionViewController.swift in Sources */,
 				95673AA51E8132C400D53205 /* AppDelegate.swift in Sources */,
 				9552BF6F1E8D71EA00DCC0E1 /* ImagePreviewViewController.swift in Sources */,

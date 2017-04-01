@@ -3,13 +3,14 @@ import Kingfisher
 
 private let reuseIdentifier = "Cell"
 
-class PopularCollectionViewController: UICollectionViewController, HttpRequesterDelegate {
+class GalleryCollectionViewController: UICollectionViewController, HttpRequesterDelegate {
+    var choosenCategory: String = "science"
     var images: [Image] = []
     
     var url: String {
         get{
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return "\(appDelegate.baseUrl)&per_page=5&order=popular"
+            return "\(appDelegate.baseUrl)&per_page=5&category=\(choosenCategory)"
         }
     }
     
@@ -101,22 +102,12 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
      }
      */
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        
-        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
-        
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "imagePreviewViewController" )
-        UIApplication.shared.keyWindow?.rootViewController = initialViewController
-        
-
-        
-    }
+    /*
      // Uncomment this method to specify if the specified item should be selected
-//     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-//     return true
-//     }
- 
+     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+     return true
+     }
+     */
     
     /*
      // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item

@@ -23,6 +23,7 @@ class HttpRequester {
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler:
             {bodyData, response,error in
                 do{
+                   
                     let body = try JSONSerialization.jsonObject(with: bodyData!, options: []) as! [String:Any]
                     
                     
