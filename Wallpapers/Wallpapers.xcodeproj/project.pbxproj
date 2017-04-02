@@ -22,6 +22,7 @@
 		95673AAF1E8132C400D53205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95673AAD1E8132C400D53205 /* LaunchScreen.storyboard */; };
 		95B22A3F1E8E4B18006E795C /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B22A3E1E8E4B18006E795C /* CategoriesTableViewController.swift */; };
 		95B22A451E8FC6B5006E795C /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B22A441E8FC6B5006E795C /* GalleryCollectionViewController.swift */; };
+		95B22A4A1E91771B006E795C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95B22A481E91771B006E795C /* Model.xcdatamodeld */; };
 		95E5AFEA1E8693D500AD3FDB /* PopularCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5AFE91E8693D500AD3FDB /* PopularCollectionViewController.swift */; };
 		95F49A021E87EC950035C233 /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F49A001E87EC950035C233 /* ImageCollectionCell.swift */; };
 		95F49A031E87EC950035C233 /* ImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F49A011E87EC950035C233 /* ImageCollectionCell.xib */; };
@@ -47,6 +48,7 @@
 		95673AB01E8132C400D53205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95B22A3E1E8E4B18006E795C /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesTableViewController.swift; path = ViewControllers/CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		95B22A441E8FC6B5006E795C /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryCollectionViewController.swift; path = ViewControllers/GalleryCollectionViewController.swift; sourceTree = "<group>"; };
+		95B22A491E91771B006E795C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		95E5AFE91E8693D500AD3FDB /* PopularCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopularCollectionViewController.swift; path = ViewControllers/PopularCollectionViewController.swift; sourceTree = "<group>"; };
 		95F49A001E87EC950035C233 /* ImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionCell.swift; path = Views/ImageCollectionCell.swift; sourceTree = "<group>"; };
 		95F49A011E87EC950035C233 /* ImageCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCollectionCell.xib; path = Views/ImageCollectionCell.xib; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		95673A981E8132C400D53205 = {
 			isa = PBXGroup;
 			children = (
+				95B22A481E91771B006E795C /* Model.xcdatamodeld */,
 				95673AA31E8132C400D53205 /* Wallpapers */,
 				95673AA21E8132C400D53205 /* Products */,
 				52F2154AD8DEF7DDF01E8D2A /* Pods */,
@@ -302,6 +305,7 @@
 			files = (
 				9552BF6B1E8D6D7800DCC0E1 /* LikesCollectionViewController.swift in Sources */,
 				95B22A3F1E8E4B18006E795C /* CategoriesTableViewController.swift in Sources */,
+				95B22A4A1E91771B006E795C /* Model.xcdatamodeld in Sources */,
 				95150C751E84097100458339 /* Image.swift in Sources */,
 				95150C7B1E843F4400458339 /* LoadingExtension.swift in Sources */,
 				951697E91E83F0990061550C /* HttpRequesterDelegate.swift in Sources */,
@@ -481,6 +485,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		95B22A481E91771B006E795C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95B22A491E91771B006E795C /* Model.xcdatamodel */,
+			);
+			currentVersion = 95B22A491E91771B006E795C /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = CoreData/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 95673A991E8132C400D53205 /* Project object */;
 }

@@ -17,25 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mAX-UZ-gCR">
-                            <size key="itemSize" width="164" height="130"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="mAX-UZ-gCR">
+                            <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QVh-PB-t57">
-                                <rect key="frame" x="0.0" y="0.0" width="164" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="164" height="130"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
-                            <outlet property="dataSource" destination="kcs-S6-G13" id="i6M-H9-kkX"/>
+                            <outlet property="dataSource" destination="kcs-S6-G13" id="IMZ-LE-vyn"/>
                             <outlet property="delegate" destination="kcs-S6-G13" id="5iF-Gi-tgh"/>
+                            <outlet property="prefetchDataSource" destination="kcs-S6-G13" id="x11-4X-kFE"/>
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Likes" image="likes" id="0er-cp-6MI" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
@@ -178,7 +170,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="180" id="Z7n-gD-3ng"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Like"/>
+                                                <connections>
+                                                    <action selector="likeImage:" destination="nxN-nf-tgo" eventType="touchUpInside" id="m1T-RN-viX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFI-Ge-2ES">
                                                 <rect key="frame" x="180" y="0.0" width="195" height="35.5"/>
@@ -233,6 +229,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnLike" destination="Hfj-Bt-8Cp" id="hlw-4M-GRr"/>
                         <outlet property="image" destination="vqX-Or-ivX" id="jbe-B4-gBD"/>
                         <outlet property="tags" destination="xlc-Em-nfI" id="2Ao-kT-SoG"/>
                     </connections>

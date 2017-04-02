@@ -9,7 +9,7 @@ class GalleryCollectionViewController: UICollectionViewController, HttpRequester
     
     var category: String {
         get{
-             return self.choosenCategory
+            return self.choosenCategory
         }
         set(value){
             self.choosenCategory = value
@@ -38,22 +38,6 @@ class GalleryCollectionViewController: UICollectionViewController, HttpRequester
         self.http?.delegate = self
         self.http?.get(fromUrl: self.url)
         self.collectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        
-        
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        let screenSize = UIScreen.main.fixedCoordinateSpace.bounds
-        let width = screenSize.width / 2
-        let height = screenSize.height / 2
-        
-        return CGSize(width: width, height: height)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
     
     func didReceiveData(data: Any) {
@@ -82,23 +66,15 @@ class GalleryCollectionViewController: UICollectionViewController, HttpRequester
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        //let screenSize = UIScreen.main.fixedCoordinateSpace.bounds
-        //let width = screenSize.width / 2
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as!
         ImageCollectionCell
         
-        // cell.image.sizeThatFits(CGSize(width: width, height: width))
-        
         let imageUrl = self.images[indexPath.row].previewUrl
-        
         let url = URL(string: imageUrl!)
         cell.image.kf.setImage(with: url)
         cell.likesCount.text = "\(self.images[indexPath.row].likes!)"
         
         return cell
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -110,38 +86,4 @@ class GalleryCollectionViewController: UICollectionViewController, HttpRequester
         self.show(nextVC, sender: self)
         
     }
-
-    
-    
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
-    
 }

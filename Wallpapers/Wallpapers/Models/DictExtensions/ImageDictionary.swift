@@ -1,14 +1,7 @@
-//
-//  ImageDictionary.swift
-//  Wallpapers
-//
-//  Created by Nadejda on 3/23/17.
-//
-//
-
 import Foundation
 
 extension Image {
+    
     convenience init(withDict dict: Dictionary<String , Any>){
         let id = dict["id"] as! Int
         let previewUrl = dict["previewURL"] as! String

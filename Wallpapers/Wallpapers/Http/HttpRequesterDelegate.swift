@@ -1,11 +1,3 @@
-//
-//  HttpRequesterDelegate.swift
-//  Wallpapers
-//
-//  Created by Nadejda on 3/23/17.
-//
-//
-
 import UIKit
 
 protocol HttpRequesterDelegate {
@@ -21,5 +13,4 @@ extension HttpRequesterDelegate {
     func didReceiveError(error: Error){
         
     }
-    
 }

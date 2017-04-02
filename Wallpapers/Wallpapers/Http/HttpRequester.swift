@@ -1,11 +1,3 @@
-//
-//  HttpRequester.swift
-//  Wallpapers
-//
-//  Created by Nadejda on 3/23/17.
-//
-//
-
 import UIKit
 
 class HttpRequester {
@@ -15,26 +7,21 @@ class HttpRequester {
     func get(fromUrl urlString: String)
     {
         let url = URL(string: urlString)
-        
         let request = URLRequest(url: url!)
-        
         weak var weakSelf = self
         
         let dataTask = URLSession.shared.dataTask(with: request, completionHandler:
             {bodyData, response,error in
-                do{
-                   
+                do {
                     let body = try JSONSerialization.jsonObject(with: bodyData!, options: []) as! [String:Any]
-                    
-                    
                     weakSelf?.delegate?.didReceiveData(data : body["hits"]!)
                 }
                 catch{
                     weakSelf?.delegate?.didReceiveError(error : error)
-
+                    
                 }
         })
         
         dataTask.resume()
-    } 
+    }
 }
