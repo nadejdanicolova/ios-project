@@ -29,8 +29,6 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
         self.http?.get(fromUrl: self.url)
         self.collectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
         
-        
-        
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -104,11 +102,10 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let imageId = "\(self.images[indexPath.row].id!)"
-        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "imagePreviewViewController" ) as! ImagePreviewViewController
+        let nextVC = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "imagePreviewViewController") as! ImagePreviewViewController
+        nextVC.imageId = imageId
         
-        initialViewController.imageId = imageId
-        UIApplication.shared.keyWindow?.rootViewController = initialViewController
+        self.show(nextVC, sender: self)
         
     }
      // Uncomment this method to specify if the specified item should be selected
