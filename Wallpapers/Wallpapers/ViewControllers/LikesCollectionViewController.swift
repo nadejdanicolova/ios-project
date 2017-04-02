@@ -64,11 +64,10 @@ class LikesCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let imageId = "\(self.images[indexPath.row].id!)"
-        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "imagePreviewViewController" ) as! ImagePreviewViewController
+        let nextVC = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "imagePreviewViewController") as! ImagePreviewViewController
+        nextVC.imageId = imageId
         
-        initialViewController.imageId = imageId
-        UIApplication.shared.keyWindow?.rootViewController = initialViewController
+        self.show(nextVC, sender: self)
         
     }
 

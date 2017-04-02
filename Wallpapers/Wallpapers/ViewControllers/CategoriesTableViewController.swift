@@ -19,7 +19,7 @@ class CategoriesTableViewController: UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-                DispatchQueue.main.async{
+        DispatchQueue.main.async{
             self.hideLoadingScreen()
         }
     }
@@ -42,21 +42,19 @@ class CategoriesTableViewController: UITableViewController{
         
         cell.collectionImage.image = self.categoriesImages[indexPath.row]
         cell.collectionName.text = self.categoriesNames[indexPath.row]
- 
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "galleryCollectionViewController" ) as! GalleryCollectionViewController
+        let categoryName = self.categoriesNames[indexPath.row]
+        let nextVC = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "galleryCollectionViewController" ) as! GalleryCollectionViewController
         
-        initialViewController.choosenCategory = self.categoriesNames[indexPath.row]
-        UIApplication.shared.keyWindow?.rootViewController = initialViewController
-        
-        
+        nextVC.category = categoryName
+        self.show(nextVC, sender: self)
     }
-    
+  
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        if segue.identifier == "imageTableViewController" {
     //            if let indexPath = self.tableView.indexPathForSelectedRow {
