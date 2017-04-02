@@ -1,27 +1,31 @@
-//
-//  ImagePreviewViewController.swift
-//  Wallpapers
-//
-//  Created by Nadejda on 3/30/17.
-//
-//
-
 import UIKit
+import LIHAlert
 
 class ImagePreviewViewController: UIViewController, HttpRequesterDelegate {
     
-   
     @IBOutlet weak var image: UIImageView!
-   
     @IBOutlet weak var tags: UILabel!
+    
+    var successAlert: LIHAlert?
+    var errorAlert: LIHAlert?
     
     var imageInfo : Image? = nil
     var images: [Image] = []
+    var id : String = ""
+    
+    var imageId: String {
+        get {
+            return self.id
+        }
+        set(value) {
+            self.id = value
+        }
+    }
     
     var url: String {
         get{
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return "\(appDelegate.baseUrl)&id=195893"
+            return "\(appDelegate.baseUrl)&id=\(imageId)"
         }
     }
     
@@ -37,27 +41,41 @@ class ImagePreviewViewController: UIViewController, HttpRequesterDelegate {
         
         self.http?.delegate = self
         self.http?.get(fromUrl: self.url)
+        
+        self.successAlert = LIHAlertManager.getSuccessAlert(message: "Image is saved")
+        self.successAlert?.initAlert(self.view)
+        
+        self.errorAlert = LIHAlertManager.getErrorAlert(message: "Failed. Please try again")
+        self.errorAlert?.initAlert(self.view)
     }
     
     
-    @IBAction func SaveImage(_ sender: Any) {
-        
+    func showBanner(sender: AnyObject) {
+        self.successAlert?.show(nil, hidden: nil)
+    }
+    
+    func showError(sender: AnyObject) {
+        self.errorAlert?.show(nil, hidden: nil)
+    }
+    
+    @IBAction func saveImage(_ sender: Any) {
         do {
+            
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let fileURL = documentsURL.appendingPathComponent("\(imageInfo?.id).png")
-       
+            
             if let pngImageData = UIImagePNGRepresentation(image.image!) {
                 try pngImageData.write(to: fileURL, options: .atomic)
-                print("work")
+                showBanner(sender: successAlert!)
             }
         } catch {
+            showError(sender: errorAlert!)
         }
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func didReceiveData(data: Any) {
@@ -65,30 +83,15 @@ class ImagePreviewViewController: UIViewController, HttpRequesterDelegate {
         let dataArray = data as! [Dictionary<String, Any>]
         
         self.images = dataArray.map(){Image(withDict: $0)}
-        
         self.imageInfo = self.images.first
         
         DispatchQueue.main.async{
+            let imageUrl = self.imageInfo?.previewUrl
+            let url = URL(string: imageUrl!)
             
+            self.image.kf.setImage(with: url)
+            self.tags!.text = "Tags: \(self.imageInfo!.tags!)"
         }
-        let imageUrl = self.imageInfo?.previewUrl
         
-        let url = URL(string: imageUrl!)
-        self.image.kf.setImage(with: url)
-      
-        
-        self.tags!.text = "Tags: \(self.imageInfo!.tags!)"
-       
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

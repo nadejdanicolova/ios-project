@@ -4,8 +4,17 @@ import Kingfisher
 private let reuseIdentifier = "Cell"
 
 class GalleryCollectionViewController: UICollectionViewController, HttpRequesterDelegate {
-    var choosenCategory: String = "science"
+    var choosenCategory: String = ""
     var images: [Image] = []
+    
+    var category: String {
+        get{
+             return self.choosenCategory
+        }
+        set(value){
+            self.choosenCategory = value
+        }
+    }
     
     var url: String {
         get{
@@ -91,6 +100,18 @@ class GalleryCollectionViewController: UICollectionViewController, HttpRequester
         return cell
         
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let imageId = "\(self.images[indexPath.row].id!)"
+        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "imagePreviewViewController" ) as! ImagePreviewViewController
+        
+        initialViewController.imageId = imageId
+        UIApplication.shared.keyWindow?.rootViewController = initialViewController
+        
+    }
+
     
     
     // MARK: UICollectionViewDelegate

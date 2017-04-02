@@ -103,13 +103,12 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        
+        let imageId = "\(self.images[indexPath.row].id!)"
         let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "imagePreviewViewController" ) as! ImagePreviewViewController
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "imagePreviewViewController" )
+        initialViewController.imageId = imageId
         UIApplication.shared.keyWindow?.rootViewController = initialViewController
-        
-
         
     }
      // Uncomment this method to specify if the specified item should be selected
