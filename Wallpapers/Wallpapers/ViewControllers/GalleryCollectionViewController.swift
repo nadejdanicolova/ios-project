@@ -19,7 +19,7 @@ class GalleryCollectionViewController: UICollectionViewController, HttpRequester
     var url: String {
         get{
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return "\(appDelegate.baseUrl)&per_page=5&category=\(choosenCategory)"
+            return "\(appDelegate.baseUrl)&per_page=27&category=\(choosenCategory)"
         }
     }
     

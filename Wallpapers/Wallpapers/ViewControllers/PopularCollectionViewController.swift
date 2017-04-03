@@ -9,7 +9,7 @@ class PopularCollectionViewController: UICollectionViewController, HttpRequester
     var url: String {
         get{
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return "\(appDelegate.baseUrl)&per_page=5&order=popular"
+            return "\(appDelegate.baseUrl)&per_page=27&order=popular"
         }
     }
     
