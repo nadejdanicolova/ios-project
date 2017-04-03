@@ -9,11 +9,15 @@ class LikesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadData()
+        
         
         let cellNib = UINib(nibName: "ImageCollectionCell", bundle: nil)
         self.collectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    loadData()
     }
     
     override func didReceiveMemoryWarning() {

@@ -44,7 +44,6 @@ class ImagePreviewViewController: UIViewController, HttpRequesterDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         
         self.http?.delegate = self
         self.http?.get(fromUrl: self.url)
@@ -57,7 +56,11 @@ class ImagePreviewViewController: UIViewController, HttpRequesterDelegate {
         
     }
     
-       func showBanner(sender: AnyObject) {
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func showBanner(sender: AnyObject) {
         self.successAlert?.show(nil, hidden: nil)
     }
     
@@ -105,14 +108,14 @@ class ImagePreviewViewController: UIViewController, HttpRequesterDelegate {
             
             likedImage.id = Int32(imageId!)
             likedImage.url = imageUrl
-           likedImage.isLiked = true
+            likedImage.isLiked = true
             
             self.managedObjectContext.insert(likedImage)
             
             self.appDelegate.saveContext()
             
         }
-         if(btnText == "Dislike"){
+        if(btnText == "Dislike"){
             btnLike.setTitle("Like", for: .normal)
             
             let imageUrl = self.imageInfo?.previewUrl
